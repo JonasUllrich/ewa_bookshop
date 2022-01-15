@@ -18,7 +18,6 @@ module.exports = {
     'plugin:import/recommended',
     'plugin:import/typescript',
     'plugin:vue/vue3-recommended',
-    'plugin:tailwindcss/recommended',
     'plugin:prettier/recommended',
   ],
   globals: {
@@ -37,7 +36,6 @@ module.exports = {
 
     'vue/valid-define-props': 'error',
 
-    'tailwindcss/no-custom-classname': 'off', // tmp disabled because of issue with vite dev mode
   },
   settings: {
     'import/resolver': {

@@ -14,17 +14,21 @@
   </li>
 </template>
 
-<script>
-export default {
-  props: {
-    product: {
-      required: true,
-      type: Object,
+<script setup lang="ts">
+// import { computed } from 'vue'
+defineProps({
+  product: {
+    type: Object,
+    // eslint-disable-next-line vue/require-valid-default-prop
+    default: {
+      id: 1,
+      name: 'Throwback Hip Bag',
+      href: '#',
+      color: 'Salmon',
+      imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+      imageAlt:
+        'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
     },
   },
-  setup(props) {
-    console.log(props.title)
-    return {}
-  },
-}
+})
 </script>

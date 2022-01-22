@@ -29,13 +29,6 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-
-    'unicorn/filename-case': 'off',
-    'unicorn/prevent-abbreviations': 'off',
-    'unicorn/prefer-node-protocol': 'off',
-
-    'vue/valid-define-props': 'error',
-
   },
   settings: {
     'import/resolver': {

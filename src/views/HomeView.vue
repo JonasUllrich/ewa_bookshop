@@ -16,7 +16,24 @@
 
           <div class="flex-1 flex items-center justify-end">
             <!-- Search -->
-            <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+
+            <input
+              id="search"
+              type="text"
+              name="search"
+              class="
+                shadow-sm
+                focus:ring-indigo-500 focus:border-indigo-500
+                block
+                w-64
+                pr-12
+                sm:text-sm
+                border-gray-300
+                rounded-md
+              "
+              :class="[expandSearchbar ? 'expandSearchbar' : 'hideSearchbar']"
+            />
+            <a href="#" class="p-2 text-gray-400 hover:text-gray-500" @click="toggleSearch">
               <span class="sr-only">Search</span>
               <SearchIcon class="w-6 h-6" aria-hidden="true" />
             </a>
@@ -38,6 +55,7 @@ import ShoppingBagPopoverPanel from '@/components/organisms/ShoppingBagPopoverPa
 import ShopCatalog from '@/components/organisms/ShopCatalog.vue'
 import { TProduct } from '@/types/ShopTypes'
 import { useStore } from '@/stores/shop'
+import { ref } from 'vue'
 
 const shopStore = useStore()
 
@@ -84,4 +102,36 @@ const products: Array<TProduct> = [
   },
 ]
 shopStore.setProducts(products)
+const expandSearchbar = ref(false)
+const toggleSearch = () => {
+  expandSearchbar.value = !expandSearchbar.value
+}
 </script>
+<style>
+@keyframes searchBarAnimation {
+  from {
+    opacity: 0 !important;
+    width: 0% !important;
+    border: 2px solid red !important;
+  }
+  to {
+    opacity: 1 !important;
+    width: 100% !important;
+    border: 2px solid green !important;
+  }
+}
+
+.expandSearchbar {
+  /* animation: searchBarAnimation 0.5s ease-in 0s 1 normal forwards !important; */
+  animation-name: searchBarAnimation;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+.hideSearchbar {
+  /* animation: searchBarAnimation 0.5s ease-in 0s 1 reverse backwards !important; */
+  animation-name: searchBarAnimation;
+  animation-duration: 1s;
+  animation-direction: reverse;
+  animation-fill-mode: backwards;
+}
+</style>

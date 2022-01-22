@@ -29,32 +29,7 @@
   </header>
 </template>
 
-<script>
-import { SearchIcon, BookOpenIcon } from '@heroicons/vue/outline'
-import ShoppingBagPopoverPanel from '@/components/organisms/ShoppingBagPopoverPanel.vue'
-
-const products = [
-  {
-    id: 1,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-]
-
-export default {
-  components: {
-    SearchIcon,
-    BookOpenIcon,
-    ShoppingBagPopoverPanel,
-  },
-  setup() {
-    return {
-      products,
-    }
-  },
-}
+<script setup lang="ts">
+import { SearchIcon, BookOpenIcon } from "@heroicons/vue/outline";
+import ShoppingBagPopoverPanel from "@/components/organisms/ShoppingBagPopoverPanel.vue";
 </script>

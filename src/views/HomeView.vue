@@ -1,271 +1,196 @@
+<!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <div class="py-16 bg-gray-50 overflow-hidden lg:py-24">
-    <div class="relative max-w-xl mx-auto px-4 sm:px-6 lg:px-8 lg:max-w-7xl">
-      <svg
-        class="hidden lg:block absolute left-full transform -translate-x-1/2 -translate-y-1/4"
-        width="404"
-        height="784"
-        fill="none"
-        viewBox="0 0 404 784"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="b1e6e422-73f8-40a6-b5d9-c8586e37e0e7"
-            x="0"
-            y="0"
-            width="20"
-            height="20"
-            patternUnits="userSpaceOnUse"
-          >
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="404" height="784" fill="url(#b1e6e422-73f8-40a6-b5d9-c8586e37e0e7)" />
-      </svg>
+  <header class="relative bg-white">
+    <nav aria-label="Top" class="max-w-[90rem] mx-auto sm:px-6 lg:px-8">
+      <div class="relative border-b border-gray-200 px-4 pb-14 sm:static sm:px-0 sm:pb-0">
+        <div class="h-16 flex items-center justify-between">
+          <!-- Logo -->
+          <div class="flex-1 flex">
+            <a href="#">
+              <span class="sr-only">Workflow</span>
+              <img
+                class="h-8 w-auto"
+                src="https://tailwindui.com/img/logos/workflow-mark.svg?color=indigo&shade=600"
+                alt=""
+              />
+            </a>
+          </div>
 
-      <div class="relative">
-        <h2
-          class="
-            text-center text-3xl
-            leading-8
-            font-extrabold
-            tracking-tight
-            text-gray-900
-            sm:text-4xl
-          "
-        >
-          A better way to send money
-        </h2>
-        <p class="mt-4 max-w-3xl mx-auto text-center text-xl text-gray-500">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magnam voluptatum
-          cupiditate veritatis in, accusamus quisquam.
-        </p>
-      </div>
+          <div class="absolute bottom-0 inset-x-0 border-t overflow-x-auto sm:static sm:border-t-0">
+            <div class="h-14 flex items-center px-4 space-x-8 sm:h-auto">
+              <a
+                v-for="item in navigation"
+                :key="item.name"
+                :href="item.href"
+                class="text-sm font-medium text-gray-700 hover:text-gray-800"
+                >{{ item.name }}</a
+              >
+            </div>
+          </div>
 
-      <div class="relative mt-12 lg:mt-24 lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-        <div class="relative">
-          <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-            Transfer funds world-wide
-          </h3>
-          <p class="mt-3 text-lg text-gray-500">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur minima sequi
-            recusandae, porro maiores officia assumenda aliquam laborum ab aliquid veritatis impedit
-            odit adipisci optio iste blanditiis facere. Totam, velit.
-          </p>
+          <div class="flex-1 flex items-center justify-end">
+            <!-- Search -->
+            <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+              <span class="sr-only">Search</span>
+              <SearchIcon class="w-6 h-6" aria-hidden="true" />
+            </a>
 
-          <dl class="mt-10 space-y-10">
-            <div v-for="item in transferFeatures" :key="item.id" class="relative">
-              <dt>
-                <div
+            <!-- Cart -->
+            <Popover class="ml-4 flow-root text-sm lg:relative lg:ml-8">
+              <PopoverButton class="group -m-2 p-2 flex items-center">
+                <ShoppingBagIcon
+                  class="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                  aria-hidden="true"
+                />
+                <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800"
+                  >0</span
+                >
+                <span class="sr-only">items in cart, view bag</span>
+              </PopoverButton>
+              <transition
+                enter-active-class="transition ease-out duration-200"
+                enter-from-class="opacity-0"
+                enter-to-class="opacity-100"
+                leave-active-class="transition ease-in duration-150"
+                leave-from-class="opacity-100"
+                leave-to-class="opacity-0"
+              >
+                <PopoverPanel
                   class="
                     absolute
-                    flex
-                    items-center
-                    justify-center
-                    h-12
-                    w-12
-                    rounded-md
-                    bg-indigo-500
-                    text-white
+                    top-16
+                    inset-x-0
+                    mt-px
+                    pb-6
+                    bg-white
+                    shadow-lg
+                    sm:px-2
+                    lg:top-full
+                    lg:left-auto
+                    lg:right-0
+                    lg:mt-3
+                    lg:-mr-1.5
+                    lg:w-80
+                    lg:rounded-lg
+                    lg:ring-1
+                    lg:ring-black
+                    lg:ring-opacity-5
                   "
                 >
-                  <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
-                </div>
-                <p class="ml-16 text-lg leading-6 font-medium text-gray-900">{{ item.name }}</p>
-              </dt>
-              <dd class="mt-2 ml-16 text-base text-gray-500">{{ item.description }}</dd>
-            </div>
-          </dl>
-        </div>
+                  <h2 class="sr-only">Shopping Cart</h2>
 
-        <div class="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-          <svg
-            class="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
-            width="784"
-            height="404"
-            fill="none"
-            viewBox="0 0 784 404"
-          >
-            <defs>
-              <pattern
-                id="ca9667ae-9f92-4be7-abcb-9e3d727f2941"
-                x="0"
-                y="0"
-                width="20"
-                height="20"
-                patternUnits="userSpaceOnUse"
-              >
-                <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-              </pattern>
-            </defs>
-            <rect width="784" height="404" fill="url(#ca9667ae-9f92-4be7-abcb-9e3d727f2941)" />
-          </svg>
-          <img
-            class="relative mx-auto"
-            width="490"
-            src="https://tailwindui.com/img/features/feature-example-1.png"
-            alt
-          />
-        </div>
-      </div>
+                  <form class="max-w-2xl mx-auto px-4">
+                    <ul role="list" class="divide-y divide-gray-200">
+                      <ShoppingBagItemPreview
+                        v-for="product in products"
+                        :key="product.id"
+                        :product="product"
+                      />
+                      <!-- <li
+                        v-for="product in products"
+                        :key="product.id"
+                        class="py-6 flex items-center"
+                      >
+                        <img
+                          :src="product.imageSrc"
+                          :alt="product.imageAlt"
+                          class="flex-none w-16 h-16 rounded-md border border-gray-200"
+                        />
+                        <div class="ml-4 flex-auto">
+                          <h3 class="font-medium text-gray-900">
+                            <a :href="product.href">{{ product.name }}</a>
+                          </h3>
+                          <p class="text-gray-500">{{ product.color }}</p>
+                        </div>
+                      </li> -->
+                    </ul>
 
-      <svg
-        class="hidden lg:block absolute right-full transform translate-x-1/2 translate-y-12"
-        width="404"
-        height="784"
-        fill="none"
-        viewBox="0 0 404 784"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="64e643ad-2176-4f86-b3d7-f2c5da3b6a6d"
-            x="0"
-            y="0"
-            width="20"
-            height="20"
-            patternUnits="userSpaceOnUse"
-          >
-            <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
-          </pattern>
-        </defs>
-        <rect width="404" height="784" fill="url(#64e643ad-2176-4f86-b3d7-f2c5da3b6a6d)" />
-      </svg>
+                    <button
+                      type="submit"
+                      class="
+                        w-full
+                        bg-indigo-600
+                        border border-transparent
+                        rounded-md
+                        shadow-sm
+                        py-2
+                        px-4
+                        text-sm
+                        font-medium
+                        text-white
+                        hover:bg-indigo-700
+                        focus:outline-none
+                        focus:ring-2
+                        focus:ring-offset-2
+                        focus:ring-offset-gray-50
+                        focus:ring-indigo-500
+                      "
+                    >
+                      Checkout
+                    </button>
 
-      <div class="relative mt-12 sm:mt-16 lg:mt-24">
-        <div class="lg:grid lg:grid-flow-row-dense lg:grid-cols-2 lg:gap-8 lg:items-center">
-          <div class="lg:col-start-2">
-            <h3 class="text-2xl font-extrabold text-gray-900 tracking-tight sm:text-3xl">
-              Always in the loop
-            </h3>
-            <p class="mt-3 text-lg text-gray-500">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit ex obcaecati natus
-              eligendi delectus, cum deleniti sunt in labore nihil quod quibusdam expedita nemo.
-            </p>
-
-            <dl class="mt-10 space-y-10">
-              <div v-for="item in communicationFeatures" :key="item.id" class="relative">
-                <dt>
-                  <div
-                    class="
-                      absolute
-                      flex
-                      items-center
-                      justify-center
-                      h-12
-                      w-12
-                      rounded-md
-                      bg-indigo-500
-                      text-white
-                    "
-                  >
-                    <component :is="item.icon" class="h-6 w-6" aria-hidden="true" />
-                  </div>
-                  <p class="ml-16 text-lg leading-6 font-medium text-gray-900">{{ item.name }}</p>
-                </dt>
-                <dd class="mt-2 ml-16 text-base text-gray-500">{{ item.description }}</dd>
-              </div>
-            </dl>
-          </div>
-
-          <div class="mt-10 -mx-4 relative lg:mt-0 lg:col-start-1">
-            <svg
-              class="absolute left-1/2 transform -translate-x-1/2 translate-y-16 lg:hidden"
-              width="784"
-              height="404"
-              fill="none"
-              viewBox="0 0 784 404"
-              aria-hidden="true"
-            >
-              <defs>
-                <pattern
-                  id="e80155a9-dfde-425a-b5ea-1f6fadd20131"
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="20"
-                  patternUnits="userSpaceOnUse"
-                >
-                  <rect
-                    x="0"
-                    y="0"
-                    width="4"
-                    height="4"
-                    class="text-gray-200"
-                    fill="currentColor"
-                  />
-                </pattern>
-              </defs>
-              <rect width="784" height="404" fill="url(#e80155a9-dfde-425a-b5ea-1f6fadd20131)" />
-            </svg>
-            <img
-              class="relative mx-auto"
-              width="490"
-              src="https://tailwindui.com/img/features/feature-example-2.png"
-              alt
-            />
+                    <p class="mt-6 text-center">
+                      <a href="#" class="text-sm font-medium text-indigo-600 hover:text-indigo-500"
+                        >View Shopping Bag</a
+                      >
+                    </p>
+                  </form>
+                </PopoverPanel>
+              </transition>
+            </Popover>
           </div>
         </div>
       </div>
-    </div>
-  </div>
+    </nav>
+  </header>
 </template>
 
-<script lang="ts">
-import {
-  AnnotationIcon,
-  GlobeAltIcon,
-  LightningBoltIcon,
-  MailIcon,
-  ScaleIcon,
-} from '@heroicons/vue/outline'
+<script>
+import { SearchIcon, ShoppingBagIcon } from '@heroicons/vue/outline'
+import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
+import ShoppingBagItemPreview from '@/components/molecules/ShoppingBagItemPreview.vue'
 
-const transferFeatures = [
-  {
-    id: 1,
-    name: 'Competitive exchange rates',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: GlobeAltIcon,
-  },
-  {
-    id: 2,
-    name: 'No hidden fees',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: ScaleIcon,
-  },
-  {
-    id: 3,
-    name: 'Transfers are instant',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: LightningBoltIcon,
-  },
+const navigation = [
+  { name: 'Women', href: '#' },
+  { name: 'Men', href: '#' },
+  { name: 'Company', href: '#' },
+  { name: 'Stores', href: '#' },
 ]
-const communicationFeatures = [
+const products = [
   {
     id: 1,
-    name: 'Mobile notifications',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: AnnotationIcon,
+    name: 'Throwback Hip Bag',
+    href: '#',
+    color: 'Salmon',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+    imageAlt:
+      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
   },
   {
     id: 2,
-    name: 'Reminder emails',
-    description:
-      'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-    icon: MailIcon,
+    name: 'Medium Stuff Satchel',
+    href: '#',
+    color: 'Blue',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-02.jpg',
+    imageAlt:
+      'Front of satchel with blue canvas body, black straps and handle, drawstring top, and front zipper pouch.',
   },
+  // More products...
 ]
 
 export default {
+  components: {
+    Popover,
+    ShoppingBagItemPreview,
+    PopoverButton,
+    PopoverPanel,
+    SearchIcon,
+    ShoppingBagIcon,
+  },
   setup() {
     return {
-      transferFeatures,
-      communicationFeatures,
+      navigation,
+      products,
     }
   },
 }

@@ -4,6 +4,7 @@ specifiers:
   '@commitlint/cli': ^14.1.0
   '@commitlint/config-conventional': ^14.1.0
   '@commitlint/cz-commitlint': ^14.1.0
+  '@headlessui/vue': ^1.4.3
   '@heroicons/vue': ^1.0.5
   '@types/node': ^16.11.7
   '@typescript-eslint/eslint-plugin': ^5.3.1
@@ -36,6 +37,7 @@ specifiers:
   vue-tsc: ^0.29.0
 
 dependencies:
+  '@headlessui/vue': 1.4.3_vue@3.2.21
   '@heroicons/vue': 1.0.5_vue@3.2.21
   '@vueuse/core': 6.8.0_vue@3.2.21
   pinia: 2.0.2_typescript@4.4.4+vue@3.2.21
@@ -509,6 +511,15 @@ packages:
     transitivePeerDependencies:
       - supports-color
     dev: true
+
+  /@headlessui/vue/1.4.3_vue@3.2.21:
+    resolution: {integrity: sha512-cDAd3aP7jH5bO2WO4eSkyQQg0k6Zw8gobl+zL8LGApqix28EtlxultyKH/mVKnbo8Kiq6IDRzwP1HfKOf1QZbQ==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      vue: ^3.0.0
+    dependencies:
+      vue: 3.2.21
+    dev: false
 
   /@heroicons/vue/1.0.5_vue@3.2.21:
     resolution: {integrity: sha512-idWtp20Fjr7mqnD7EdGDUDi83oWHnx3SwyuQY6GZyF33OApzpBOLxz7xa4t6rPOddGz9tI5RGnndLk+ake7ijQ==}

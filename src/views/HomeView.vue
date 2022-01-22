@@ -29,9 +29,11 @@
       </div>
     </nav>
   </header>
+  <ShopCatalog />
 </template>
 
 <script setup lang="ts">
-import { SearchIcon, BookOpenIcon } from "@heroicons/vue/outline";
-import ShoppingBagPopoverPanel from "@/components/organisms/ShoppingBagPopoverPanel.vue";
+import { SearchIcon, BookOpenIcon } from '@heroicons/vue/outline'
+import ShoppingBagPopoverPanel from '@/components/organisms/ShoppingBagPopoverPanel.vue'
+import ShopCatalog from '@/components/organisms/ShopCatalog.vue'
 </script>

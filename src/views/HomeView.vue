@@ -30,6 +30,7 @@
     </nav>
   </header>
   <ShopCatalog />
+  <ShoppingBagOverview :open="true" />
 </template>
 
 <script setup lang="ts">

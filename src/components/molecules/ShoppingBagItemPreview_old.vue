@@ -1,9 +1,9 @@
 <template>
   <li class="py-6 flex items-center">
-    <img :src="product.imageSrc" class="flex-none w-16 h-16 rounded-md border border-gray-200" />
+    <img :src="product.LinkGrafik" class="flex-none w-16 h-16 rounded-md border border-gray-200" />
     <div class="ml-4 flex-auto">
       <h3 class="font-medium text-gray-900">
-        <a :href="product.href">{{ product.name }}</a>
+        <a :href="product.LinkGrafik">{{ product.Produkttitel }}</a>
       </h3>
       <p class="text-gray-500">{{ product.author }}</p>
       <p class="text-gray-500">Quantity: {{ product.quantity }}</p>
@@ -41,7 +41,7 @@ defineProps({
     type: Object,
     // eslint-disable-next-line vue/require-valid-default-prop
     default: {
-      id: 1,
+      ProduktID: 1,
       name: 'Vue.js Buch',
       href: '#',
       author: 'Prof. Dr. Wiedemann',

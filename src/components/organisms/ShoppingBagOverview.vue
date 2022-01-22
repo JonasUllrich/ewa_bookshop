@@ -52,7 +52,7 @@
                       <ul role="list" class="-my-6 divide-y divide-gray-200">
                         <ShoppingBagItemPreview
                           v-for="product in shopStore.getCartItems"
-                          :key="product.id"
+                          :key="product.ProduktID"
                           :product="product"
                           class="py-6 flex"
                         />

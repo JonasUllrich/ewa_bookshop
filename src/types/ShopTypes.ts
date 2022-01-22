@@ -1,20 +1,16 @@
 export interface TProduct {
-  id: number
-  name: string
-  price: number
-  href: string
-  color: string
-  imageSrc: string
-  imageAlt: string
+  ProduktID: number
+  Produkttitel: string
+  PreisBrutto: string
+  LinkGrafik: string
+  Produktcode: string
 }
 
 export interface TCartItem {
-  id: number
-  name: string
-  price: number
-  href: string
-  color: string
-  imageSrc: string
-  imageAlt: string
+  ProduktID: number
+  Produkttitel: string
+  PreisBrutto: string
+  LinkGrafik: string
+  Produktcode: string
   quantity: number
 }

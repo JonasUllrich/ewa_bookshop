@@ -49,7 +49,7 @@
           <ul role="list" class="divide-y divide-gray-200">
             <ShoppingBagItemPreview
               v-for="product in shopStore.getCartItems"
-              :key="product.id"
+              :key="product.ProduktID"
               :product="product"
             />
           </ul>
@@ -107,7 +107,7 @@ const shopStore = useStore()
 // })
 // const products = [
 //   {
-//     id: 1,
+//     ProduktID: 1,
 //     name: 'Vue.js Buch',
 //     href: '#',
 //     author: 'Prof. Dr. Wiedemann',

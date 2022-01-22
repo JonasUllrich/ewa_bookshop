@@ -1,16 +1,16 @@
 <template>
   <div>
-    <div class="relative shadow-xl bg-gray-700">
+    <div class="relative shadow-xs">
       <div class="relative w-full h-72 rounded-lg overflow-hidden">
-        <img
-          :src="product.imageSrc"
-          :alt="product.imageAlt"
-          class="w-full h-full object-center object-cover"
+        <div
+          aria-hidden="true"
+          class="absolute inset-x-0 bottom-0 h-36 bg-gradient-to-t from-black opacity-50"
         />
+        <img :src="product.LinkGrafik" class="w-full h-full object-center object-cover" />
       </div>
       <div class="relative mt-4">
-        <h3 class="text-sm font-medium text-gray-900">{{ product.name }}</h3>
-        <p class="mt-1 text-sm text-gray-500">{{ product.color }}</p>
+        <h3 class="text-sm font-medium text-gray-900">{{ product.Produkttitel }}</h3>
+        <p class="mt-1 text-sm text-gray-500">{{ product.Produktcode }}</p>
       </div>
       <div
         class="
@@ -26,7 +26,7 @@
           overflow-hidden
         "
       >
-        <p class="relative text-lg font-semibold text-white">{{ product.price }}</p>
+        <p class="relative text-lg font-semibold text-white">{{ product.PreisBrutto }}</p>
       </div>
     </div>
     <div class="mt-6">
@@ -49,42 +49,38 @@
         @click="addToCart(product as TProduct)"
       >
         Add to bag
-        <span class="sr-only">, {{ product.name }}</span>
+        <span class="sr-only">, {{ product.Produkttitel }}</span>
       </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-// import { computed } from 'vue'
+import { PropType } from 'vue'
 import { useStore } from '@/stores/shop'
 // import { TProduct } from '@/types/ShopTypes'
 // import { TProduct } from '@/types/ShopTypes.ts'
 interface TProduct {
-  id: number
-  name: string
-  price: number
-  href: string
-  color: string
-  imageSrc: string
-  imageAlt: string
+  ProduktID: number
+  Produkttitel: string
+  PreisBrutto: number
+  LinkGrafik: string
+  Produktcode: string
 }
 
 const shopStore = useStore()
 
 defineProps({
   product: {
-    type: Object,
+    type: Object as PropType<TProduct>,
     // eslint-disable-next-line vue/require-valid-default-prop
     default: {
-      id: 1,
-      name: 'Throwback Hip Bag',
-      href: '#',
-      price: 122.2,
-      color: 'Salmon',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-      imageAlt:
-        'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+      ProduktID: 1,
+      Produkttitel: 'Throwback Hip Bag',
+      PreisBrutto: 122.2,
+      Produktcode: 'Salmon',
+      LinkGrafik:
+        'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
     },
   },
 })

@@ -1,25 +1,21 @@
 <template>
   <li class="py-6 flex">
     <div class="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
-      <img
-        :src="product.imageSrc"
-        :alt="product.imageAlt"
-        class="w-full h-full object-center object-cover"
-      />
+      <img :src="product.LinkGrafik" class="w-full h-full object-center object-cover" />
     </div>
 
     <div class="ml-4 flex-1 flex flex-col">
       <div>
         <div class="flex justify-between text-base font-medium text-gray-900">
           <h3>
-            <a :href="product.href">
-              {{ product.name }}
+            <a :href="product.LinkGrafik">
+              {{ product.Produkttitel }}
             </a>
           </h3>
-          <p class="ml-4 font-bold text-lg">{{ product.price }} €</p>
+          <p class="ml-4 font-bold text-lg">{{ product.PreisBrutto }} €</p>
         </div>
         <p class="mt-1 text-sm text-gray-500">
-          {{ product.color }}
+          {{ product.Produktcode }}
         </p>
         <div class="mx-1 flex w-full justify-end pb-4 items-center gap-2">
           <PlusSmIcon
@@ -33,7 +29,7 @@
               rounded-full
               hover:bg-gray-100
             "
-            @click="shopStore.incProductquantity(product.id)"
+            @click="shopStore.incProductquantity(product.ProduktID)"
           />
           <input
             :value="product.quantity"
@@ -65,7 +61,7 @@
               rounded-full
               hover:bg-gray-100
             "
-            @click="shopStore.decProductquantity(product.id)"
+            @click="shopStore.decProductquantity(product.ProduktID)"
           />
         </div>
       </div>
@@ -74,7 +70,7 @@
           <button
             type="button"
             class="font-medium text-indigo-600 hover:text-indigo-500"
-            @click="shopStore.removeProductFromCart(product.id)"
+            @click="shopStore.removeProductFromCart(product.ProduktID)"
           >
             Entfernen
           </button>
@@ -97,7 +93,7 @@ defineProps({
     type: Object,
     // eslint-disable-next-line vue/require-valid-default-prop
     default: {
-      id: 1,
+      ProduktID: 1,
       name: 'Vue.js Buch',
       href: '#',
       author: 'Prof. Dr. Wiedemann',

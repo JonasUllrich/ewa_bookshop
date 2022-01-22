@@ -42,9 +42,9 @@
                 class="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
                 aria-hidden="true"
               />
-              <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
-                {{ shopStore.cartItemQuantity }}</span
-              >
+              <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{{
+                shopStore.cartItemQuantity
+              }}</span>
             </div>
           </div>
         </div>
@@ -67,96 +67,82 @@ const shopStore = useStore()
 
 const products: Array<TProduct> = [
   {
-    id: 1,
-    name: 'Throwback Hip Bag1',
-    href: '#',
-    price: 122.2,
-    color: 'Salmon',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 2,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    price: 122.2,
-    color: 'Salmon',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 3,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    price: 122.2,
-    color: 'Salmon',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 4,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    price: 122.2,
-    color: 'Salmon',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-]
-
-const v = [
-  {
     ProduktID: 1,
     Produktcode: 'abc123',
     Produkttitel: 'PHP-Kochbuch',
-    Autorname: 'King of PHP',
-    Verlagsname: 'PHPB\u00fcchersindbl\u00f6d GmbH',
-    PreisNetto: '70.00',
-    Mwstsatz: 0.07,
     PreisBrutto: '74.90',
-    Lagerbestand: 500,
-    Kurzinhalt: 'Dieses Buch ist f\u00fcr Buchstaben da.',
-    Gewicht: 500,
     LinkGrafik:
-      'https:\/\/nord-sued.com\/wp-content\/uploads\/2021\/09\/U1_978-3-314-10582-1_3D_sRGB-997x1024.png',
+      'https://nord-sued.com/wp-content/uploads/2021/09/U1_978-3-314-10582-1_3D_sRGB-997x1024.png',
   },
   {
     ProduktID: 2,
     Produktcode: '1234abc',
     Produkttitel: 'Java-Kochbuch',
-    Autorname: 'Dr. Java',
-    Verlagsname: 'JBooks',
-    PreisNetto: '30.00',
-    Mwstsatz: 0.07,
     PreisBrutto: '32.10',
-    Lagerbestand: 6,
-    Kurzinhalt: 'In diesem Buch lernen Sie wie man in MineCraft kocht.',
-    Gewicht: 300,
     LinkGrafik:
-      'https:\/\/articles-images.sftcdn.net\/wp-content\/uploads\/sites\/8\/2013\/01\/Minecraft_Zauberbuch.png',
+      'https://articles-images.sftcdn.net/wp-content/uploads/sites/8/2013/01/Minecraft_Zauberbuch.png',
   },
   {
     ProduktID: 3,
     Produktcode: '1234abcd',
     Produkttitel: 'JavaScript-Frameworks',
-    Autorname: 'Mr. JayScript',
-    Verlagsname: 'JScripts',
-    PreisNetto: '60.00',
-    Mwstsatz: 0.07,
     PreisBrutto: '64.20',
-    Lagerbestand: 1000,
-    Kurzinhalt: 'Dieses Buch erkl\u00e4rt Ihnen verschiedene JS-Frameworks',
-    Gewicht: 800,
-    LinkGrafik: 'https:\/\/shop.ksta.de\/de\/autothumb\/1000x1000\/Wandertag_Cover_Quadrat.jpg',
+    LinkGrafik: 'https://shop.ksta.de/de/autothumb/1000x1000/Wandertag_Cover_Quadrat.jpg',
   },
 ]
+// const v = [
+//   {
+//     ProduktID: 1,
+//     Produktcode: 'abc123',
+//     Produkttitel: 'PHP-Kochbuch',
+//     Autorname: 'King of PHP',
+//     Verlagsname: 'PHPBu00fcchersindblu00f6d GmbH',
+//     PreisNetto: '70.00',
+//     Mwstsatz: 0.07,
+//     PreisBrutto: '74.90',
+//     Lagerbestand: 500,
+//     Kurzinhalt: 'Dieses Buch ist fu00fcr Buchstaben da.',
+//     Gewicht: 500,
+//     LinkGrafik:
+//       'https://nord-sued.com/wp-content/uploads/2021/09/U1_978-3-314-10582-1_3D_sRGB-997x1024.png',
+//   },
+//   {
+//     ProduktID: 2,
+//     Produktcode: '1234abc',
+//     Produkttitel: 'Java-Kochbuch',
+//     Autorname: 'Dr. Java',
+//     Verlagsname: 'JBooks',
+//     PreisNetto: '30.00',
+//     Mwstsatz: 0.07,
+//     PreisBrutto: '32.10',
+//     Lagerbestand: 6,
+//     Kurzinhalt: 'In diesem Buch lernen Sie wie man in MineCraft kocht.',
+//     Gewicht: 300,
+//     LinkGrafik:
+//       'https://articles-images.sftcdn.net/wp-content/uploads/sites/8/2013/01/Minecraft_Zauberbuch.png',
+//   },
+//   {
+//     ProduktID: 3,
+//     Produktcode: '1234abcd',
+//     Produkttitel: 'JavaScript-Frameworks',
+//     Autorname: 'Mr. JayScript',
+//     Verlagsname: 'JScripts',
+//     PreisNetto: '60.00',
+//     Mwstsatz: 0.07,
+//     PreisBrutto: '64.20',
+//     Lagerbestand: 1000,
+//     Kurzinhalt: 'Dieses Buch erklu00e4rt Ihnen verschiedene JS-Frameworks',
+//     Gewicht: 800,
+//     LinkGrafik: 'https://shop.ksta.de/de/autothumb/1000x1000/Wandertag_Cover_Quadrat.jpg',
+//   },
+// ]
 
 shopStore.setProducts(products)
-fetch(' https://iws107.informatik.htw-dresden.de/ewa/G04/api/api.php')
-  .then((response) => response.json())
-  .then((data) => shopStore.setProducts(JSON.parse(data)))
+
+// fetch(' https://iws107.informatik.htw-dresden.de/ewa/G04/api/api.php')
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log(data)
+//     shopStore.setProducts(data)
+//   })
 </script>

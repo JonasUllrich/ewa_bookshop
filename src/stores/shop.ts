@@ -16,7 +16,10 @@ export const useStore = defineStore('shop', {
     },
     getCartItems(): TCartItem[] {
       const c = this.shoppingCart.map((i) => {
-        return { ...this.products.filter((e) => i.id == e.id)[0], quantity: i.quantity }
+        return {
+          ...this.products.filter((e) => i.ProduktID == e.ProduktID)[0],
+          quantity: i.quantity,
+        }
       })
       console.log(c)
       return c
@@ -30,10 +33,10 @@ export const useStore = defineStore('shop', {
       this.products = items
     },
     addProductToCart(item: TProduct) {
-      if (this.shoppingCart.filter((e) => item.id == e.id).length > 0) {
+      if (this.shoppingCart.filter((e) => item.ProduktID == e.ProduktID).length > 0) {
         for (let index = 0; index < this.shoppingCart.length; index++) {
           const element = this.shoppingCart[index]
-          if (element.id != item.id) continue
+          if (element.ProduktID != item.ProduktID) continue
           else this.shoppingCart[index].quantity++
         }
       } else {
@@ -41,40 +44,40 @@ export const useStore = defineStore('shop', {
       }
     },
     setProductquantity(item: TProduct, quantity: number) {
-      // if (this.products.filter((e) => item.id == e.id).length > 0)
+      // if (this.products.filter((e) => item.ProduktID == e.ProduktID).length > 0)
       for (let index = 0; index < this.shoppingCart.length; index++) {
         const element = this.shoppingCart[index]
-        if (element.id != item.id) continue
+        if (element.ProduktID != item.ProduktID) continue
         else if (quantity == 0) this.shoppingCart.splice(index, 1)
         else this.shoppingCart[index].quantity == quantity
       }
       // else this.shoppingCart.push({ ...item, quantity: 1 })
     },
     incProductquantity(itemid: number) {
-      // if (this.products.filter((e) => item.id == e.id).length > 0)
+      // if (this.products.filter((e) => item.ProduktID == e.ProduktID).length > 0)
       for (let index = 0; index < this.shoppingCart.length; index++) {
         const element = this.shoppingCart[index]
-        if (element.id != itemid) continue
+        if (element.ProduktID != itemid) continue
         // else if (element.quantity == 0) this.shoppingCart.splice(index, 1)
         else this.shoppingCart[index].quantity++
       }
       // else this.shoppingCart.push({ ...item, quantity: 1 })
     },
     decProductquantity(itemid: number) {
-      // if (this.products.filter((e) => item.id == e.id).length > 0)
+      // if (this.products.filter((e) => item.ProduktID == e.ProduktID).length > 0)
       for (let index = 0; index < this.shoppingCart.length; index++) {
         const element = this.shoppingCart[index]
-        if (element.id != itemid) continue
+        if (element.ProduktID != itemid) continue
         else if (element.quantity == 0) this.shoppingCart.splice(index, 1)
         else this.shoppingCart[index].quantity--
       }
       // else this.shoppingCart.push({ ...item, quantity: 1 })
     },
     removeProductFromCart(itemid: number) {
-      // if (this.products.filter((e) => item.id == e.id).length > 0)
+      // if (this.products.filter((e) => item.ProduktID == e.ProduktID).length > 0)
       for (let index = 0; index < this.shoppingCart.length; index++) {
         const element = this.shoppingCart[index]
-        if (element.id != itemid) continue
+        if (element.ProduktID != itemid) continue
         this.shoppingCart.splice(index, 1)
       }
       // else this.shoppingCart.push({ ...item, quantity: 1 })

@@ -12,6 +12,8 @@
             </a>
           </div>
 
+          <p class="text-xl tracking-wide font-medium text-gray-400">EWAs Bücher (G04)</p>
+
           <div class="flex-1 flex items-center justify-end">
             <!-- Search -->
             <a href="#" class="p-2 text-gray-400 hover:text-gray-500">

@@ -9,42 +9,48 @@
 
 <script setup lang="ts">
 import ShopItem from '@/components/molecules/ShopItem.vue'
+// import { TProduct } from '@/types/ShopTypes'
+import { useStore } from '@/stores/shop'
+import { storeToRefs } from 'pinia'
+
+const shopStore = useStore()
+const { products } = storeToRefs(shopStore)
 // import { computed } from 'vue'
-defineProps({
-  product: {
-    required: true,
-    type: Object,
-    // eslint-disable-next-line vue/require-valid-default-prop
-    default: {},
-  },
-})
-const products = [
-  {
-    id: 1,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 2,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-  {
-    id: 3,
-    name: 'Throwback Hip Bag',
-    href: '#',
-    color: 'Salmon',
-    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-    imageAlt:
-      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
-  },
-]
+// defineProps({
+//   product: {
+//     required: true,
+//     type: Object,
+//     // eslint-disable-next-line vue/require-valid-default-prop
+//     default: {},
+//   },
+// })
+// const products1 = [
+//   {
+//     id: 1,
+//     name: 'Throwback Hip Bag',
+//     href: '#',
+//     color: 'Salmon',
+//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+//     imageAlt:
+//       'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+//   },
+//   {
+//     id: 2,
+//     name: 'Throwback Hip Bag',
+//     href: '#',
+//     color: 'Salmon',
+//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+//     imageAlt:
+//       'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+//   },
+//   {
+//     id: 3,
+//     name: 'Throwback Hip Bag',
+//     href: '#',
+//     color: 'Salmon',
+//     imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+//     imageAlt:
+//       'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+//   },
+// ]
 </script>

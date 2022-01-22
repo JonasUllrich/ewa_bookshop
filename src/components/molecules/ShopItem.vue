@@ -30,8 +30,7 @@
       </div>
     </div>
     <div class="mt-6">
-      <a
-        :href="product.href"
+      <button
         class="
           relative
           flex
@@ -47,16 +46,32 @@
           text-gray-900
           hover:bg-gray-200
         "
+        @click="addToCart(product as TProduct)"
       >
         Add to bag
         <span class="sr-only">, {{ product.name }}</span>
-      </a>
+      </button>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 // import { computed } from 'vue'
+import { useStore } from '@/stores/shop'
+// import { TProduct } from '@/types/ShopTypes'
+// import { TProduct } from '@/types/ShopTypes.ts'
+interface TProduct {
+  id: number
+  name: string
+  price: number
+  href: string
+  color: string
+  imageSrc: string
+  imageAlt: string
+}
+
+const shopStore = useStore()
+
 defineProps({
   product: {
     type: Object,
@@ -65,6 +80,7 @@ defineProps({
       id: 1,
       name: 'Throwback Hip Bag',
       href: '#',
+      price: 122.2,
       color: 'Salmon',
       imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
       imageAlt:
@@ -72,4 +88,8 @@ defineProps({
     },
   },
 })
+
+const addToCart = (item: TProduct) => {
+  shopStore.addProductToCart(item)
+}
 </script>

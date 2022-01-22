@@ -44,7 +44,7 @@ const shopStore = useStore()
 const products: Array<TProduct> = [
   {
     id: 1,
-    name: 'Throwback Hip Bag',
+    name: 'Throwback Hip Bag1',
     href: '#',
     price: 122.2,
     color: 'Salmon',

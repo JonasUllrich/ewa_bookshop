@@ -7,8 +7,14 @@ export interface TProduct {
   imageSrc: string
   imageAlt: string
 }
+
 export interface TCartItem {
   id: number
-  //   count: string
+  name: string
+  price: number
+  href: string
+  color: string
+  imageSrc: string
+  imageAlt: string
   count: number
 }

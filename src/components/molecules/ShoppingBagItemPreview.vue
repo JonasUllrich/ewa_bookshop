@@ -2,14 +2,15 @@
   <li class="py-6 flex items-center">
     <img
       :src="product.imageSrc"
-      :alt="product.imageAlt"
       class="flex-none w-16 h-16 rounded-md border border-gray-200"
     />
     <div class="ml-4 flex-auto">
       <h3 class="font-medium text-gray-900">
         <a :href="product.href">{{ product.name }}</a>
       </h3>
-      <p class="text-gray-500">{{ product.color }}</p>
+      <p class="text-gray-500">{{ product.author }}</p>
+      <p class="text-gray-500">Quantity: {{ product.quantity }}</p>
+      <button>+</button>
     </div>
   </li>
 </template>
@@ -22,13 +23,13 @@ defineProps({
     // eslint-disable-next-line vue/require-valid-default-prop
     default: {
       id: 1,
-      name: 'Throwback Hip Bag',
-      href: '#',
-      color: 'Salmon',
-      imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
-      imageAlt:
-        'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+      name: "Vue.js Buch",
+      href: "#",
+      author: "Prof. Dr. Wiedemann",
+      imageSrc:
+        "https://shop.ksta.de/de/autothumb/1000x1000/Das_Gute_Nacht_Geschichten_Buch_vom_Koelner_Stadt_Anzeiger.jpg",
+      quantity: 1,
     },
   },
-})
+});
 </script>

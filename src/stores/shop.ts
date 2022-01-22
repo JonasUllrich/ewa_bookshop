@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { TProduct, TCartItem } from '@/types/ShopTypes'
 
-export const useScrollStateStore = defineStore('shop', {
+export const useStore = defineStore('shop', {
   state: () => ({
     products: [] as TProduct[],
     shoppingCart: [] as TCartItem[],

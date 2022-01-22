@@ -65,13 +65,12 @@ defineProps({
 const products = [
   {
     id: 1,
-    name: "Throwback Hip Bag",
+    name: "Vue.js Buch",
     href: "#",
-    color: "Salmon",
+    author: "Prof. Dr. Wiedemann",
     imageSrc:
-      "https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg",
-    imageAlt:
-      "Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.",
+      "https://shop.ksta.de/de/autothumb/1000x1000/Das_Gute_Nacht_Geschichten_Buch_vom_Koelner_Stadt_Anzeiger.jpg",
+    quantity: 1,
   },
 ];
 </script>

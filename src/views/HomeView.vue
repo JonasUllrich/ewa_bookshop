@@ -36,4 +36,52 @@
 import { SearchIcon, BookOpenIcon } from '@heroicons/vue/outline'
 import ShoppingBagPopoverPanel from '@/components/organisms/ShoppingBagPopoverPanel.vue'
 import ShopCatalog from '@/components/organisms/ShopCatalog.vue'
+import { TProduct } from '@/types/ShopTypes'
+import { useStore } from '@/stores/shop'
+
+const shopStore = useStore()
+
+const products: Array<TProduct> = [
+  {
+    id: 1,
+    name: 'Throwback Hip Bag',
+    href: '#',
+    price: 122.2,
+    color: 'Salmon',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+    imageAlt:
+      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+  },
+  {
+    id: 1,
+    name: 'Throwback Hip Bag',
+    href: '#',
+    price: 122.2,
+    color: 'Salmon',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+    imageAlt:
+      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+  },
+  {
+    id: 1,
+    name: 'Throwback Hip Bag',
+    href: '#',
+    price: 122.2,
+    color: 'Salmon',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+    imageAlt:
+      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+  },
+  {
+    id: 1,
+    name: 'Throwback Hip Bag',
+    href: '#',
+    price: 122.2,
+    color: 'Salmon',
+    imageSrc: 'https://tailwindui.com/img/ecommerce-images/shopping-cart-page-04-product-01.jpg',
+    imageAlt:
+      'Salmon orange fabric pouch with match zipper, gray zipper pull, and adjustable hip belt.',
+  },
+]
+shopStore.setProducts(products)
 </script>

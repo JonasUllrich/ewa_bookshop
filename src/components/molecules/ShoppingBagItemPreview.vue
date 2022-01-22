@@ -1,33 +1,84 @@
 <template>
-  <li class="py-6 flex items-center">
-    <img :src="product.imageSrc" class="flex-none w-16 h-16 rounded-md border border-gray-200" />
-    <div class="ml-4 flex-auto">
-      <h3 class="font-medium text-gray-900">
-        <a :href="product.href">{{ product.name }}</a>
-      </h3>
-      <p class="text-gray-500">{{ product.author }}</p>
-      <p class="text-gray-500">Quantity: {{ product.quantity }}</p>
-      <button>+</button>
-      <div class="mx-1 flex items-center gap-2">
-        <PlusIcon class="w-6 h-6 bg-gray-100 p-2 rounded-full font-bold" />
-        <input
-          type="number"
-          min="0"
-          name="count"
-          class="
-            shadow-sm
-            focus:ring-indigo-500 focus:border-indigo-500
-            block
-            p-2
-            w-12
-            bg-gray-100
-            sm:text-sm
-            border-gray-300
-            rounded-md
-          "
-          placeholder="Anzahl"
-        />
-        <MinusIcon class="w-6 h-6 bg-gray-100 p-2 rounded-full font-bold" />
+  <li class="py-6 flex">
+    <div class="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
+      <img
+        :src="product.imageSrc"
+        :alt="product.imageAlt"
+        class="w-full h-full object-center object-cover"
+      />
+    </div>
+
+    <div class="ml-4 flex-1 flex flex-col">
+      <div>
+        <div class="flex justify-between text-base font-medium text-gray-900">
+          <h3>
+            <a :href="product.href">
+              {{ product.name }}
+            </a>
+          </h3>
+          <p class="ml-4 font-bold text-lg">{{ product.price }} €</p>
+        </div>
+        <p class="mt-1 text-sm text-gray-500">
+          {{ product.color }}
+        </p>
+        <div class="mx-1 flex w-full justify-end pb-4 items-center gap-2">
+          <PlusSmIcon
+            class="
+              w-8
+              h-8
+              text-gray-400
+              border border-gray-300
+              text-xs
+              p-1
+              rounded-full
+              hover:bg-gray-100
+            "
+            @click="shopStore.incProductquantity(product.id)"
+          />
+          <input
+            :value="product.quantity"
+            type="text"
+            min="0"
+            name="count"
+            class="
+              shadow-sm
+              focus:ring-indigo-500 focus:border-indigo-500
+              block
+              p-2
+              text-center
+              w-12
+              sm:text-sm
+              border-gray-300
+              rounded-md
+            "
+            readonly
+            placeholder="Anzahl"
+          />
+          <MinusSmIcon
+            class="
+              w-8
+              h-8
+              text-gray-400
+              border border-gray-300
+              text-xs
+              p-1
+              rounded-full
+              hover:bg-gray-100
+            "
+            @click="shopStore.decProductquantity(product.id)"
+          />
+        </div>
+      </div>
+      <div class="flex-1 flex items-end justify-between text-sm">
+        <div class="flex justify-end w-full">
+          <button
+            type="button"
+            class="font-medium text-indigo-600 hover:text-indigo-500"
+            @click="shopStore.removeProductFromCart(product.id)"
+          >
+            Entfernen
+          </button>
+        </div>
       </div>
     </div>
   </li>
@@ -35,7 +86,12 @@
 
 <script setup lang="ts">
 // import { computed } from 'vue'
-import { MinusIcon, PlusIcon } from '@heroicons/vue/outline'
+import { MinusSmIcon, PlusSmIcon } from '@heroicons/vue/solid'
+// import { TProduct } from '@/types/ShopTypes'
+import { useStore } from '@/stores/shop'
+
+const shopStore = useStore()
+
 defineProps({
   product: {
     type: Object,

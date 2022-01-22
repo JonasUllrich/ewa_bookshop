@@ -16,5 +16,5 @@ export interface TCartItem {
   color: string
   imageSrc: string
   imageAlt: string
-  count: number
+  quantity: number
 }

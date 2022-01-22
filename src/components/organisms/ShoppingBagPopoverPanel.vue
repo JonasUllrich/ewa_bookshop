@@ -5,9 +5,9 @@
         class="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
         aria-hidden="true"
       />
-      <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{{
-        shopStore.cartItemCount
-      }}</span>
+      <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">
+        {{ shopStore.cartItemQuantity }}
+      </span>
       <span class="sr-only">items in cart, view bag</span>
     </PopoverButton>
     <transition
@@ -91,7 +91,7 @@
 
 <script setup lang="ts">
 import { ShoppingBagIcon } from '@heroicons/vue/outline'
-import ShoppingBagItemPreview from '@/components/molecules/ShoppingBagItemPreview.vue'
+import ShoppingBagItemPreview from '@/components/molecules/ShoppingBagItemPreview_old.vue'
 import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue'
 import { useStore } from '@/stores/shop'
 // import { storeToRefs } from 'pinia'

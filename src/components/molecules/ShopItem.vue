@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative">
+    <div class="relative shadow-xl bg-gray-700">
       <div class="relative w-full h-72 rounded-lg overflow-hidden">
         <img
           :src="product.imageSrc"

@@ -23,6 +23,7 @@ export default defineConfig({
       renderLegacyChunks: false,
     }),
   ],
+  base: '/ewa/G04/bookshop',
   resolve: {
     alias: {
       '@': path.resolve(path.dirname(url.fileURLToPath(import.meta.url)), '/src'),

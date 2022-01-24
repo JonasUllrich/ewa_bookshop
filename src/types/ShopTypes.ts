@@ -14,9 +14,9 @@ export interface TCartItem {
   PreisBrutto: string
   LinkGrafik: string
   Produktcode: string
-  quantity: number
   Autorname: string
   Lagerbestand: number
+  quantity: number
 }
 
 export enum TStatusCode {

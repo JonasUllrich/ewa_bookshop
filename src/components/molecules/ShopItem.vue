@@ -60,7 +60,7 @@
         "
         @click="addToCart(product as TProduct)"
       >
-        Add to bag
+        Zum Warenkorb hinzufügen
         <span class="sr-only">, {{ product.Produkttitel }}</span>
       </button>
     </div>

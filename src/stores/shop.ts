@@ -6,11 +6,13 @@ export const useStore = defineStore('shop', {
     products: [] as TProduct[],
     shoppingCart: [] as TCartItem[],
     shoppingCartPreview: false,
-    searchvalue: String,
+    searchvalue: '',
   }),
   getters: {
     getProducts(): TProduct[] {
-      return this.products
+      return this.products.filter(
+        (e) => e.Produkttitel.toLowerCase().indexOf(this.searchvalue.toLowerCase()) > -1
+      )
     },
     cartItemQuantity(): number {
       return this.shoppingCart.length

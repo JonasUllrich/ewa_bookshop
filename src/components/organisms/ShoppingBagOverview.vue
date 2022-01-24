@@ -32,9 +32,7 @@
               <div class="h-full flex flex-col bg-white shadow-xl overflow-y-scroll">
                 <div class="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
                   <div class="flex items-start justify-between">
-                    <DialogTitle class="text-lg font-medium text-gray-900">
-                      Shopping cart
-                    </DialogTitle>
+                    <DialogTitle class="text-lg font-medium text-gray-900"> Warenkorb </DialogTitle>
                     <div class="ml-3 h-7 flex items-center">
                       <button
                         type="button"
@@ -63,12 +61,9 @@
 
                 <div class="border-t border-gray-200 py-6 px-4 sm:px-6">
                   <div class="flex justify-between text-base font-medium text-gray-900">
-                    <p>Subtotal</p>
+                    <p>Gesamtpreis</p>
                     <p>{{ shopStore.getCartTotalPrice.toFixed(2) }} €</p>
                   </div>
-                  <p class="mt-0.5 text-sm text-gray-500">
-                    Shipping and taxes calculated at checkout.
-                  </p>
                   <div class="mt-6">
                     <a
                       href="#"
@@ -87,18 +82,18 @@
                         bg-indigo-600
                         hover:bg-indigo-700
                       "
-                      >Checkout</a
+                      >Zur Kasse</a
                     >
                   </div>
                   <div class="mt-6 flex justify-center text-sm text-center text-gray-500">
                     <p>
-                      or
+                      oder
                       <button
                         type="button"
                         class="text-indigo-600 font-medium hover:text-indigo-500"
                         @click="shopStore.toggleShoppingCartPreview()"
                       >
-                        Continue Shopping<span aria-hidden="true"> &rarr;</span>
+                        weitere Bücher kaufen<span aria-hidden="true"> &rarr;</span>
                       </button>
                     </p>
                   </div>

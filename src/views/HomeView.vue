@@ -70,7 +70,9 @@ const products: Array<TProduct> = [
     ProduktID: 1,
     Produktcode: 'abc123',
     Produkttitel: 'PHP-Kochbuch',
+    Autorname: 'PHP-Kochbuch',
     PreisBrutto: '74.90',
+    Lagerbestand: 1,
     LinkGrafik:
       'https://nord-sued.com/wp-content/uploads/2021/09/U1_978-3-314-10582-1_3D_sRGB-997x1024.png',
   },
@@ -78,13 +80,20 @@ const products: Array<TProduct> = [
     ProduktID: 2,
     Produktcode: '1234abc',
     Produkttitel: 'Java-Kochbuch',
+    Autorname: 'PHP-Kochbuch',
+
     PreisBrutto: '32.10',
+    Lagerbestand: 0,
+
     LinkGrafik:
       'https://articles-images.sftcdn.net/wp-content/uploads/sites/8/2013/01/Minecraft_Zauberbuch.png',
   },
   {
     ProduktID: 3,
+    Autorname: 'PHP-Kochbuch',
+
     Produktcode: '1234abcd',
+    Lagerbestand: 15,
     Produkttitel: 'JavaScript-Frameworks',
     PreisBrutto: '64.20',
     LinkGrafik: 'https://shop.ksta.de/de/autothumb/1000x1000/Wandertag_Cover_Quadrat.jpg',
@@ -139,7 +148,7 @@ const products: Array<TProduct> = [
 
 shopStore.setProducts(products)
 
-// fetch(' https://iws107.informatik.htw-dresden.de/ewa/G04/api/api.php')
+// fetch('https://iws107.informatik.htw-dresden.de/ewa/G04/api/api.php')
 //   .then((response) => response.json())
 //   .then((data) => {
 //     console.log(data)

@@ -4,6 +4,8 @@ export interface TProduct {
   PreisBrutto: string
   LinkGrafik: string
   Produktcode: string
+  Autorname: string
+  Lagerbestand: number
 }
 
 export interface TCartItem {
@@ -13,4 +15,11 @@ export interface TCartItem {
   LinkGrafik: string
   Produktcode: string
   quantity: number
+  Autorname: string
+  Lagerbestand: number
+}
+
+export enum TStatusCode {
+  success = 1,
+  error,
 }

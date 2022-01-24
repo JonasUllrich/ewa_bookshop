@@ -29,7 +29,8 @@
               rounded-full
               hover:bg-gray-100
             "
-            @click="shopStore.incProductquantity(product.ProduktID)"
+            :class="[hint ? 'hidden' : '']"
+            @click="addProduct(product.ProduktID)"
           />
           <input
             :value="product.quantity"
@@ -61,7 +62,7 @@
               rounded-full
               hover:bg-gray-100
             "
-            @click="shopStore.decProductquantity(product.ProduktID)"
+            @click="rmProduct(product.ProduktID)"
           />
         </div>
       </div>
@@ -81,10 +82,11 @@
 </template>
 
 <script setup lang="ts">
-// import { computed } from 'vue'
+import { ref } from 'vue'
 import { MinusSmIcon, PlusSmIcon } from '@heroicons/vue/solid'
 // import { TProduct } from '@/types/ShopTypes'
 import { useStore } from '@/stores/shop'
+import { TStatusCode } from '@/types/ShopTypes'
 
 const shopStore = useStore()
 
@@ -103,4 +105,11 @@ defineProps({
     },
   },
 })
+const hint = ref(false)
+const addProduct = (productId: number) => {
+  if (shopStore.incProductquantity(productId) == TStatusCode.error) hint.value = true
+}
+const rmProduct = (productId: number) => {
+  if (shopStore.decProductquantity(productId) == TStatusCode.success) hint.value = false
+}
 </script>

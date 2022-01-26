@@ -65,25 +65,37 @@
                     <p>{{ shopStore.getCartTotalPrice.toFixed(2) }} €</p>
                   </div>
                   <div class="mt-6">
-                    <a
-                      href="#"
-                      class="
-                        flex
-                        justify-center
-                        items-center
-                        px-6
-                        py-3
-                        border border-transparent
-                        rounded-md
-                        shadow-sm
-                        text-base
-                        font-medium
-                        text-white
-                        bg-indigo-600
-                        hover:bg-indigo-700
-                      "
-                      >Zur Kasse</a
+                    <!-- <form action="../stripe/stripe_redirect.php" method="POST"> -->
+                    <form
+                      ref="cartform"
+                      action="https://iws107.informatik.htw-dresden.de/ewa/G04/stripe/stripe_redirect.php"
+                      method="POST"
                     >
+                      <!-- <button id="checkout-button" type="submit">Checkout</button> -->
+                      <input id="custId" ref="cartItems" type="hidden" name="custId" />
+
+                      <button
+                        type="button"
+                        class="
+                          flex
+                          justify-center
+                          items-center
+                          px-6
+                          py-3
+                          border border-transparent
+                          rounded-md
+                          shadow-sm
+                          text-base
+                          font-medium
+                          text-white
+                          bg-indigo-600
+                          hover:bg-indigo-700
+                        "
+                        @click="buy()"
+                      >
+                        Zur Kasse
+                      </button>
+                    </form>
                   </div>
                   <div class="mt-6 flex justify-center text-sm text-center text-gray-500">
                     <p>
@@ -108,7 +120,7 @@
 </template>
 
 <script setup lang="ts">
-// import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import ShoppingBagItemPreview from '@/components/molecules/ShoppingBagItemPreview.vue'
 // import { storeToRefs } from 'pinia'
 
@@ -122,7 +134,22 @@ import {
 
 import { XIcon } from '@heroicons/vue/outline'
 import { useStore } from '@/stores/shop'
+import { storeToRefs } from 'pinia'
+
 const shopStore = useStore()
+const { shoppingCart } = storeToRefs(shopStore)
+const cartItems = ref()
+const cartform = ref()
+const shoppingBag = computed(() => {
+  return JSON.stringify(shoppingCart.value)
+})
+const buy = () => {
+  cartItems.value.value = JSON.stringify(shopStore.getItemsForPayment)
+  console.log(shoppingBag.value)
+  console.log(shopStore.getItemsForPayment)
+
+  cartform.value.submit()
+}
 
 // const open = ref(true)
 </script>

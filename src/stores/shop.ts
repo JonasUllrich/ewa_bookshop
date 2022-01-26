@@ -14,6 +14,20 @@ export const useStore = defineStore('shop', {
         (e) => e.Produkttitel.toLowerCase().indexOf(this.searchvalue.toLowerCase()) > -1
       )
     },
+    getItemsForPayment(): any {
+      const c = this.shoppingCart.map((book) => {
+        return {
+          name: book.Produkttitel,
+          description: 'xwdwedwed',
+          images: [[book.LinkGrafik]],
+          amount: parseInt(`${parseFloat(book.PreisBrutto) * 100}`),
+          currency: 'eur',
+          quantity: book.quantity,
+        }
+      })
+      console.log(c)
+      return c
+    },
     cartItemQuantity(): number {
       return this.shoppingCart.length
     },

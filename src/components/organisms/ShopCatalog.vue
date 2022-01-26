@@ -1,17 +1,6 @@
 <template>
   <div class="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8 bg-[#ffffff]">
-    <h2
-      class="
-        text-xl
-        font-bold
-        text-transparent
-        bg-clip-text bg-gradient-to-r
-        from-indigo-600
-        to-purple-600
-      "
-    >
-      Unsere Bücher
-    </h2>
+    <h2 class="text-2xl font-bold text-[#191720]">Unsere Bücher</h2>
     <div class="mt-8 grid grid-cols-1 gap-y-12 sm:grid-cols-2 sm:gap-x-6 lg:grid-cols-4 xl:gap-x-8">
       <ShopItem
         v-for="product in shopStore.getProducts"

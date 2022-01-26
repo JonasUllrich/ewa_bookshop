@@ -34,7 +34,7 @@
                   <div class="flex items-start justify-between">
                     <DialogTitle
                       class="
-                        text-lg text-transparent
+                        text-2xl text-transparent
                         bg-clip-text bg-gradient-to-r
                         from-indigo-600
                         to-purple-600
@@ -46,7 +46,7 @@
                     <div class="ml-3 h-7 flex items-center">
                       <button
                         type="button"
-                        class="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                        class="-m-2 p-2 text-gray-300 hover:text-white"
                         @click="shopStore.toggleShoppingCartPreview()"
                       >
                         <span class="sr-only">Close panel</span>
@@ -84,36 +84,92 @@
                       <!-- <button id="checkout-button" type="submit">Checkout</button> -->
                       <input id="custId" ref="cartItems" type="hidden" name="custId" />
                       <div class="flex justify-center items-center">
-                        <button
-                          type="button"
-                          class="
-                            flex
-                            justify-center
-                            items-center
-                            px-20
-                            py-3
-                            border border-transparent
-                            rounded-md
-                            shadow-sm
-                            text-base
-                            font-medium
-                            text-white
-                            bg-indigo-600
-                            hover:bg-indigo-700
-                          "
-                          @click="buy()"
-                        >
-                          Zur Kasse
+                        <button @click="buy()">
+                          <a
+                            href="#_"
+                            class="
+                              relative
+                              inline-flex
+                              items-center
+                              px-12
+                              py-3
+                              overflow-hidden
+                              text-lg
+                              font-medium
+                              text-white
+                              border-2 border-white
+                              rounded-full
+                              hover:text-white
+                              group
+                              hover:bg-gray-50
+                            "
+                          >
+                            <span
+                              class="
+                                absolute
+                                left-0
+                                block
+                                w-full
+                                h-0
+                                transition-all
+                                bg-gradient-to-br
+                                from-[#4f46e5]
+                                via-[#9e54ff]
+                                to-[#bf33ea]
+                                group-hover:from-[#4f46e5]
+                                group-hover:via-[#9e54ff]
+                                group-hover:to-[#bf33ea]
+                                opacity-100
+                                group-hover:h-full
+                                top-1/2
+                                group-hover:top-0
+                                duration-400
+                                ease
+                              "
+                            ></span>
+                            <span
+                              class="
+                                absolute
+                                right-0
+                                flex
+                                items-center
+                                justify-start
+                                w-10
+                                h-10
+                                duration-300
+                                transform
+                                translate-x-full
+                                group-hover:translate-x-0
+                                ease
+                              "
+                            >
+                              <svg
+                                class="w-5 h-5"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                                xmlns="http://www.w3.org/2000/svg"
+                              >
+                                <path
+                                  stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  stroke-width="2"
+                                  d="M14 5l7 7m0 0l-7 7m7-7H3"
+                                ></path>
+                              </svg>
+                            </span>
+                            <span class="relative">Zur Kasse</span>
+                          </a>
                         </button>
                       </div>
                     </form>
                   </div>
-                  <div class="mt-6 flex justify-center text-sm text-center text-gray-500">
+                  <div class="mt-6 flex justify-center text-sm text-center text-gray-300">
                     <p>
                       oder
                       <button
                         type="button"
-                        class="text-indigo-600 font-medium hover:text-indigo-500"
+                        class="text-indigo-500 font-medium hover:text-indigo-400"
                         @click="shopStore.toggleShoppingCartPreview()"
                       >
                         weitere Bücher kaufen<span aria-hidden="true"> &rarr;</span>

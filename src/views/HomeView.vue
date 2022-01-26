@@ -43,8 +43,7 @@
                 border-gray-500
                 text-sm text-transparent
                 bg-clip-text bg-gradient-to-r
-                from-[#6850d4]
-                via-[#c046e5]
+                from-[#fdfdfd]
                 to-[#e546d0]
                 rounded-md
               "
@@ -66,7 +65,7 @@
                 :class="[shopStore.cartItemQuantity ? 'bounce' : '']"
               />
 
-              <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{{
+              <span class="ml-2 text-lg font-medium text-gray-500">{{
                 shopStore.cartItemQuantity
               }}</span>
             </div>

@@ -27,7 +27,7 @@
               text-xs
               p-1
               rounded-full
-              hover:bg-indigo-600
+              hover:bg-pink-500
             "
             :class="[hint ? 'hidden' : '']"
             @click="addProduct(product.ProduktID)"
@@ -62,7 +62,7 @@
               text-xs
               p-1
               rounded-full
-              hover:bg-pink-500
+              hover:bg-indigo-600
             "
             @click="rmProduct(product.ProduktID)"
           />

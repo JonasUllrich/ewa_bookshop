@@ -50,7 +50,7 @@
               placeholder="Suche"
               :class="[expandSearchbar ? 'expandSearchbar' : 'hideSearchbar']"
             />
-            <a href="#" class="p-2 text-gray-500 hover:text-gray-400" @click="toggleSearch">
+            <a href="#" class="p-2 text-gray-500" @click="toggleSearch">
               <span class="sr-only">Search</span>
               <SearchIcon class="w-6 h-6" aria-hidden="true" />
             </a>
@@ -115,8 +115,8 @@ const products: Array<TProduct> = [
   {
     ProduktID: 3,
     Produktcode: '672-3-408-92866-1',
-    Autorname: 'Jon Duckett',
     Produkttitel: 'JavaScript & JQuery',
+    Autorname: 'Jon Duckett',
     PreisBrutto: '64.20',
     Lagerbestand: 10,
     LinkGrafik: 'https://javascriptbook.com/images/book/javascript-and-jquery-book-cover.png',

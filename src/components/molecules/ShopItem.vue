@@ -11,7 +11,7 @@
       <div class="relative mt-4">
         <h3 class="text-md font-medium text-gray-900">{{ product.Produkttitel }}</h3>
         <p class="mt-1 text-sm text-gray-500">Autor: {{ product.Autorname }}</p>
-        <p class="mt-1 text-sm text-gray-500">IBAN: {{ product.Produktcode }}</p>
+        <p class="mt-1 text-sm text-gray-500">ISBN: {{ product.Produktcode }}</p>
         <!-- <p class="mt-1 text-sm text-red-700">{{ hint ? 'Ausverkauft!' : '' }}</p> -->
         <p
           class="

@@ -1,12 +1,12 @@
 <!-- This example requires Tailwind CSS v2.0+ -->
 <template>
-  <header class="relative bg-white">
+  <header class="relative bg-[#191720]">
     <nav aria-label="Top" class="max-w-[90rem] mx-auto sm:px-6 lg:px-8">
-      <div class="relative border-b border-gray-200 px-4 pb-14 sm:static sm:px-0 sm:pb-0">
+      <div class="relative border-b border-[#8620a5] px-20 pb-14 sm:static sm:px-0 sm:pb-0">
         <div class="h-20 flex items-center justify-between">
           <!-- Logo -->
           <div class="flex-1 flex">
-            <a href="#" class="p-2 text-gray-400 hover:text-gray-500">
+            <a href="" class="p-2 text-gray-500 hover:text-gray-400">
               <span class="sr-only">Workflow</span>
               <BookOpenIcon class="w-10 h-10" aria-hidden="true" />
             </a>
@@ -15,7 +15,6 @@
           <p
             class="
               tracking-wide
-              font-bold
               text-3xl text-indigo-600
               font-extrabold
               text-transparent
@@ -41,13 +40,18 @@
                 w-64
                 pr-12
                 sm:text-sm
-                border-gray-300
+                border-gray-500
+                text-sm text-transparent
+                bg-clip-text bg-gradient-to-r
+                from-[#6850d4]
+                via-[#c046e5]
+                to-[#e546d0]
                 rounded-md
               "
               placeholder="Suche"
               :class="[expandSearchbar ? 'expandSearchbar' : 'hideSearchbar']"
             />
-            <a href="#" class="p-2 text-gray-400 hover:text-gray-500" @click="toggleSearch">
+            <a href="#" class="p-2 text-gray-500 hover:text-gray-400" @click="toggleSearch">
               <span class="sr-only">Search</span>
               <SearchIcon class="w-6 h-6" aria-hidden="true" />
             </a>
@@ -57,9 +61,11 @@
               @click="shopStore.toggleShoppingCartPreview()"
             >
               <ShoppingBagIcon
-                class="flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                class="flex-shrink-0 h-6 w-6 text-gray-500 group-hover:text-gray-400"
                 aria-hidden="true"
+                :class="[shopStore.cartItemQuantity ? 'bounce' : '']"
               />
+
               <span class="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{{
                 shopStore.cartItemQuantity
               }}</span>
@@ -186,26 +192,39 @@ const toggleSearch = () => {
   from {
     opacity: 0 !important;
     width: 0% !important;
-    border: 2px solid red !important;
   }
   to {
     opacity: 1 !important;
     width: 100% !important;
-    border: 2px solid green !important;
   }
 }
 
 .expandSearchbar {
-  /* animation: searchBarAnimation 0.5s ease-in 0s 1 normal forwards !important; */
-  animation-name: searchBarAnimation;
+  animation: searchBarAnimation 0.5s ease-in 0s 1 normal forwards !important;
+  /* animation-name: searchBarAnimation;
   animation-duration: 1s;
-  animation-fill-mode: forwards;
+  animation-fill-mode: forwards; */
 }
 .hideSearchbar {
-  /* animation: searchBarAnimation 0.5s ease-in 0s 1 reverse backwards !important; */
-  animation-name: searchBarAnimation;
+  animation: searchBarAnimation 0.5s ease-in 0s 1 reverse backwards !important;
+  /* animation-name: searchBarAnimation;
   animation-duration: 1s;
   animation-direction: reverse;
-  animation-fill-mode: backwards;
+  animation-fill-mode: backwards; */
+}
+.bounce {
+  animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
 }
 </style>

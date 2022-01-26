@@ -6,7 +6,7 @@
 
     <div class="ml-4 flex-1 flex flex-col">
       <div>
-        <div class="flex justify-between text-base font-medium text-gray-900">
+        <div class="flex justify-between text-base font-medium text-white">
           <h3>
             <a :href="product.LinkGrafik">
               {{ product.Produkttitel }}
@@ -23,7 +23,7 @@
               w-8
               h-8
               text-gray-400
-              border border-gray-300
+              border border-gray-400
               text-xs
               p-1
               rounded-full
@@ -56,7 +56,7 @@
               w-8
               h-8
               text-gray-400
-              border border-gray-300
+              border border-gray-400
               text-xs
               p-1
               rounded-full

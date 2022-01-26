@@ -12,9 +12,18 @@
         <h3 class="text-md font-medium text-gray-900">{{ product.Produkttitel }}</h3>
         <p class="mt-1 text-sm text-gray-500">Autor: {{ product.Autorname }}</p>
         <p class="mt-1 text-sm text-gray-500">IBAN: {{ product.Produktcode }}</p>
-
-        <p class="mt-1 text-sm text-red-500">{{ hint ? 'Nix mehr da!' : '' }}</p>
-        <p class="mt-1 text-sm text-gray-500 font-bold">
+        <!-- <p class="mt-1 text-sm text-red-700">{{ hint ? 'Ausverkauft!' : '' }}</p> -->
+        <p
+          class="
+            mt-1
+            text-sm text-transparent
+            bg-clip-text bg-gradient-to-r
+            from-[#5338c9]
+            via-[#c046e5]
+            to-[#e546d0]
+            font-bold
+          "
+        >
           {{
             product.Lagerbestand - shopStore.getCartQuantityOfProduct(product.ProduktID) > 0
               ? `Noch ${
@@ -22,6 +31,7 @@
                 } verfügbar`
               : 'Nicht mehr verfügbar'
           }}
+          {{ hint ? ' - Ausverkauft!' : '' }}
         </p>
       </div>
       <div
@@ -42,25 +52,50 @@
       </div>
     </div>
     <div class="mt-6">
-      <button
-        class="
-          relative
-          flex
-          bg-gray-100
-          border border-transparent
-          rounded-md
-          py-2
-          px-8
-          items-center
-          justify-center
-          text-sm
-          font-medium
-          text-gray-900
-          hover:bg-gray-200
-        "
-        @click="addToCart(product as TProduct)"
-      >
-        Zum Warenkorb hinzufügen
+      <button @click="addToCart(product as TProduct)">
+        <a
+          href="#_"
+          class="
+            relative
+            p-0.5
+            inline-flex
+            items-center
+            justify-center
+            text-sm
+            font-bold
+            overflow-hidden
+            group
+            rounded-md
+          "
+        >
+          <span
+            class="
+              w-full
+              h-full
+              bg-gradient-to-br
+              from-[#4f46e5]
+              via-[#9e54ff]
+              to-[#bf33ea]
+              group-hover:from-[#4f46e5] group-hover:via-[#9e54ff] group-hover:to-[#bf33ea]
+              absolute
+            "
+          ></span>
+          <span
+            class="
+              relative
+              px-6
+              py-3
+              transition-all
+              ease-out
+              bg-white
+              rounded-md
+              group-hover:bg-opacity-0
+              duration-400
+            "
+          >
+            <span class="relative">Zum Warenkorb hinzufügen</span>
+          </span>
+        </a>
         <span class="sr-only">, {{ product.Produkttitel }}</span>
       </button>
     </div>

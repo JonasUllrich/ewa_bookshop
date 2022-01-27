@@ -69,7 +69,8 @@
       </div>
     </nav>
   </header>
-  <ShopCatalog />
+  <router-view></router-view>
+  <!-- <ShopCatalog /> -->
   <ShoppingBagOverview :open="true" />
 </template>
 
@@ -77,7 +78,7 @@
 import { ref } from 'vue'
 import { SearchIcon, BookOpenIcon, ShoppingBagIcon } from '@heroicons/vue/outline'
 // import ShoppingBagPopoverPanel from '@/components/organisms/ShoppingBagPopoverPanel.vue'
-import ShopCatalog from '@/components/organisms/ShopCatalog.vue'
+// import ShopCatalog from '@/components/organisms/ShopCatalog.vue'
 import ShoppingBagOverview from '@/components/organisms/ShoppingBagOverview.vue'
 import { TProduct } from '@/types/ShopTypes'
 import { useStore } from '@/stores/shop'

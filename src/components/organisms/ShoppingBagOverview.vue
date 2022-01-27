@@ -15,9 +15,7 @@
           leave-from="opacity-100"
           leave-to="opacity-0"
         >
-          <DialogOverlay
-            class="absolute inset-0 bg-gray-600 bg-opacity-80 transition-opacity"
-          />
+          <DialogOverlay class="absolute inset-0 bg-gray-600 bg-opacity-80 transition-opacity" />
         </TransitionChild>
 
         <div class="fixed inset-y-0 right-0 pl-10 max-w-full flex">
@@ -35,7 +33,13 @@
                 <div class="flex-1 py-6 overflow-y-auto px-4 sm:px-6">
                   <div class="flex items-start justify-between">
                     <DialogTitle
-                      class="text-2xl text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600 font-bold"
+                      class="
+                        text-2xl text-transparent
+                        bg-clip-text bg-gradient-to-r
+                        from-indigo-600
+                        to-purple-600
+                        font-bold
+                      "
                     >
                       Warenkorb
                     </DialogTitle>
@@ -82,14 +86,62 @@
                       <div class="flex justify-center items-center">
                         <button
                           type="button"
+                          class="
+                            relative
+                            inline-flex
+                            items-center
+                            px-12
+                            py-3
+                            overflow-hidden
+                            text-lg
+                            font-medium
+                            text-white
+                            border-2 border-white
+                            rounded-full
+                            hover:text-white
+                            group
+                            hover:bg-gray-50
+                          "
                           @click="buy()"
-                          class="relative inline-flex items-center px-12 py-3 overflow-hidden text-lg font-medium text-white border-2 border-white rounded-full hover:text-white group hover:bg-gray-50"
                         >
                           <span
-                            class="absolute left-0 block w-full h-0 transition-all bg-gradient-to-br from-[#4f46e5] via-[#9e54ff] to-[#bf33ea] group-hover:from-[#4f46e5] group-hover:via-[#9e54ff] group-hover:to-[#bf33ea] opacity-100 group-hover:h-full top-1/2 group-hover:top-0 duration-400 ease"
+                            class="
+                              absolute
+                              left-0
+                              block
+                              w-full
+                              h-0
+                              transition-all
+                              bg-gradient-to-br
+                              from-[#4f46e5]
+                              via-[#9e54ff]
+                              to-[#bf33ea]
+                              group-hover:from-[#4f46e5]
+                              group-hover:via-[#9e54ff]
+                              group-hover:to-[#bf33ea]
+                              opacity-100
+                              group-hover:h-full
+                              top-1/2
+                              group-hover:top-0
+                              duration-400
+                              ease
+                            "
                           ></span>
                           <span
-                            class="absolute right-0 flex items-center justify-start w-10 h-10 duration-300 transform translate-x-full group-hover:translate-x-0 ease"
+                            class="
+                              absolute
+                              right-0
+                              flex
+                              items-center
+                              justify-start
+                              w-10
+                              h-10
+                              duration-300
+                              transform
+                              translate-x-full
+                              group-hover:translate-x-0
+                              ease
+                            "
                           >
                             <svg
                               class="w-5 h-5"
@@ -108,8 +160,8 @@
                           </span>
                           <span class="relative">{{
                             shopStore.getCartItems.length > 0
-                              ? "Zur Kasse"
-                              : "Bitte Artikel hinzufügen"
+                              ? 'Zur Kasse'
+                              : 'Bitte Artikel hinzufügen'
                           }}</span>
                         </button>
                       </div>
@@ -138,8 +190,8 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
-import ShoppingBagItemPreview from "@/components/molecules/ShoppingBagItemPreview.vue";
+import { ref, computed } from 'vue'
+import ShoppingBagItemPreview from '@/components/molecules/ShoppingBagItemPreview.vue'
 // import { storeToRefs } from 'pinia'
 
 import {
@@ -148,27 +200,27 @@ import {
   DialogTitle,
   TransitionChild,
   TransitionRoot,
-} from "@headlessui/vue";
+} from '@headlessui/vue'
 
-import { XIcon } from "@heroicons/vue/outline";
-import { useStore } from "@/stores/shop";
-import { storeToRefs } from "pinia";
+import { XIcon } from '@heroicons/vue/outline'
+import { useStore } from '@/stores/shop'
+import { storeToRefs } from 'pinia'
 
-const shopStore = useStore();
-const { shoppingCart } = storeToRefs(shopStore);
-const cartItems = ref();
-const cartform = ref();
+const shopStore = useStore()
+const { shoppingCart } = storeToRefs(shopStore)
+const cartItems = ref()
+const cartform = ref()
 const shoppingBag = computed(() => {
-  return JSON.stringify(shoppingCart.value);
-});
+  return JSON.stringify(shoppingCart.value)
+})
 const buy = () => {
   if (shopStore.getCartTotalPrice > 0) {
-    cartItems.value.value = JSON.stringify(shopStore.getItemsForPayment);
-    console.log(shoppingBag.value);
-    console.log(shopStore.getItemsForPayment);
-    cartform.value.submit();
+    cartItems.value.value = JSON.stringify(shopStore.getItemsForPayment)
+    console.log(shoppingBag.value)
+    console.log(shopStore.getItemsForPayment)
+    cartform.value.submit()
   }
-};
+}
 
 // const open = ref(true)
 </script>

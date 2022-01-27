@@ -52,50 +52,49 @@
       </div>
     </div>
     <div class="mt-6">
-      <button @click="addToCart(product as TProduct)">
-        <a
-          href="#_"
+      <button
+        class="
+          relative
+          p-0.5
+          inline-flex
+          items-center
+          justify-center
+          text-sm
+          font-bold
+          overflow-hidden
+          group
+          rounded-md
+        "
+        @click="addToCart(product as TProduct)"
+      >
+        >
+        <span
+          class="
+            w-full
+            h-full
+            bg-gradient-to-br
+            from-[#4f46e5]
+            via-[#9e54ff]
+            to-[#bf33ea]
+            group-hover:from-[#4f46e5] group-hover:via-[#9e54ff] group-hover:to-[#bf33ea]
+            absolute
+          "
+        ></span>
+        <span
           class="
             relative
-            p-0.5
-            inline-flex
-            items-center
-            justify-center
-            text-sm
-            font-bold
-            overflow-hidden
-            group
+            px-6
+            py-3
+            transition-all
+            ease-out
+            bg-white
             rounded-md
+            group-hover:bg-opacity-0
+            duration-400
           "
         >
-          <span
-            class="
-              w-full
-              h-full
-              bg-gradient-to-br
-              from-[#4f46e5]
-              via-[#9e54ff]
-              to-[#bf33ea]
-              group-hover:from-[#4f46e5] group-hover:via-[#9e54ff] group-hover:to-[#bf33ea]
-              absolute
-            "
-          ></span>
-          <span
-            class="
-              relative
-              px-6
-              py-3
-              transition-all
-              ease-out
-              bg-white
-              rounded-md
-              group-hover:bg-opacity-0
-              duration-400
-            "
-          >
-            <span class="relative">Zum Warenkorb hinzufügen</span>
-          </span>
-        </a>
+          <span class="relative">Zum Warenkorb hinzufügen</span>
+        </span>
         <span class="sr-only">, {{ product.Produkttitel }}</span>
       </button>
     </div>

@@ -50,10 +50,10 @@
               placeholder="Suche"
               :class="[expandSearchbar ? 'expandSearchbar' : 'hideSearchbar']"
             />
-            <a href="#" class="p-2 text-gray-500" @click="toggleSearch">
+            <div class="p-2 text-gray-500" @click="toggleSearch">
               <span class="sr-only">Search</span>
               <SearchIcon class="w-6 h-6" aria-hidden="true" />
-            </a>
+            </div>
             <!-- Cart -->
             <div
               class="group -m-2 p-2 flex items-center"

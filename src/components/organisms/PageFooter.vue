@@ -30,9 +30,14 @@
         </div>
       </nav>
       <div class="mt-8 flex justify-center space-x-6">
-        <a href="github.com" class="text-gray-400 hover:text-gray-500">
-          <span class="sr-only">Git Hub Repo</span>
-        </a>
+        <div class="flex items-center">
+          <img class="h-8" src="@/assets/github.png" />
+          <a
+            href="https://github.com/JonasUllrich/ewa_bookshop"
+            class="text-gray-400 hover:text-gray-500 mx-3"
+            >Git Hub Repo</a
+          >
+        </div>
       </div>
       <p class="mt-8 text-center text-base text-gray-400">
         &copy; 2022 - Hänisch Timm, Heiß Alexander, Ullrich Jonas

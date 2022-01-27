@@ -13,8 +13,18 @@
           </div>
 
           <p
-            class="tracking-wide text-3xl text-indigo-600 font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600"
-          >WeBooks</p>
+            class="
+              tracking-wide
+              text-3xl text-indigo-600
+              font-extrabold
+              text-transparent
+              bg-clip-text bg-gradient-to-r
+              from-indigo-600
+              to-purple-600
+            "
+          >
+            WeBooks
+          </p>
 
           <div class="flex-1 flex items-center justify-end">
             <!-- Search -->
@@ -23,7 +33,17 @@
               v-model="searchvalue"
               type="text"
               name="search"
-              class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-64 pr-12 sm:text-sm border-gray-500 text-sm text-black"
+              class="
+                shadow-sm
+                rounded-md
+                focus:ring-indigo-500 focus:border-indigo-500
+                block
+                w-64
+                pr-12
+                sm:text-sm
+                border-gray-500
+                text-sm text-black
+              "
               placeholder="Suche"
               :class="[expandSearchbar ? 'expandSearchbar' : 'hideSearchbar']"
             />
@@ -42,7 +62,9 @@
                 :class="[shopStore.cartItemQuantity ? 'bounce' : '']"
               />
 
-              <span class="ml-2 text-lg font-medium text-gray-500">{{ shopStore.cartItemQuantity }}</span>
+              <span class="ml-2 text-lg font-medium text-gray-500">
+                {{ shopStore.cartItemQuantity }}
+              </span>
             </div>
           </div>
         </div>

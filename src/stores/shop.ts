@@ -11,7 +11,9 @@ export const useStore = defineStore('shop', {
   getters: {
     getProducts(): TProduct[] {
       return this.products.filter(
-        (e) => e.Produkttitel.toLowerCase().indexOf(this.searchvalue.toLowerCase()) > -1
+        (e) => (e.Produkttitel.toLowerCase().indexOf(this.searchvalue.toLowerCase()) > -1)
+        || (e.Autorname.toLowerCase().indexOf(this.searchvalue.toLowerCase()) > -1)
+        || (e.Produktcode.toLowerCase().indexOf(this.searchvalue.toLowerCase()) > -1)
       )
     },
     getItemsForPayment(): any {

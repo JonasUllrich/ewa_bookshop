@@ -1,12 +1,12 @@
 <template>
   <li class="py-6 flex">
-    <div class="flex-shrink-0 w-24 h-24 border border-gray-200 rounded-md overflow-hidden">
+    <div class="flex-shrink-0 w-24 h-24 border border-white rounded-md overflow-hidden">
       <img :src="product.LinkGrafik" class="w-full h-full object-center object-cover" />
     </div>
 
     <div class="ml-4 flex-1 flex flex-col">
       <div>
-        <div class="flex justify-between text-base font-medium text-gray-900">
+        <div class="flex justify-between text-base font-medium text-white">
           <h3>
             <a :href="product.LinkGrafik">
               {{ product.Produkttitel }}
@@ -14,7 +14,7 @@
           </h3>
           <p class="ml-4 font-bold text-lg">{{ product.PreisBrutto }} €</p>
         </div>
-        <p class="mt-1 text-sm text-gray-500">
+        <p class="mt-1 text-sm text-white">
           {{ product.Produktcode }}
         </p>
         <div class="mx-1 flex w-full justify-end pb-4 items-center gap-2">
@@ -22,12 +22,12 @@
             class="
               w-8
               h-8
-              text-gray-400
-              border border-gray-300
+              text-white
+              border border-white
               text-xs
               p-1
               rounded-full
-              hover:bg-gray-100
+              hover:bg-pink-500
             "
             :class="[hint ? 'hidden' : '']"
             @click="addProduct(product.ProduktID)"
@@ -39,13 +39,15 @@
             name="count"
             class="
               shadow-sm
-              focus:ring-indigo-500 focus:border-indigo-500
+              focus:ring-white focus:border-white
               block
               p-2
               text-center
               w-12
               sm:text-sm
-              border-gray-300
+              border-gray-200
+              bg-[#191720]
+              text-white
               rounded-md
             "
             readonly
@@ -55,12 +57,12 @@
             class="
               w-8
               h-8
-              text-gray-400
-              border border-gray-300
+              text-white
+              border border-white
               text-xs
               p-1
               rounded-full
-              hover:bg-gray-100
+              hover:bg-indigo-600
             "
             @click="rmProduct(product.ProduktID)"
           />
@@ -70,7 +72,7 @@
         <div class="flex justify-end w-full">
           <button
             type="button"
-            class="font-medium text-indigo-600 hover:text-indigo-500"
+            class="font-medium text-indigo-500 hover:text-indigo-400"
             @click="shopStore.removeProductFromCart(product.ProduktID)"
           >
             Entfernen

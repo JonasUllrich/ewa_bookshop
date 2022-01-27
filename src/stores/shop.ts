@@ -20,7 +20,7 @@ export const useStore = defineStore('shop', {
       const c = this.shoppingCart.map((book) => {
         return {
           name: book.Produkttitel,
-          description: 'xwdwedwed',
+          description: book.Produktcode,
           images: [[book.LinkGrafik]],
           amount: parseInt(`${parseFloat(book.PreisBrutto) * 100}`),
           currency: 'eur',

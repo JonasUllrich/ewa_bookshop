@@ -160,53 +160,6 @@ const products: Array<TProduct> = [
     LinkGrafik: 'https://www.lapabooks.com/assets/images/the-modern-web-design-process.png',
   },
 ]
-// const v = [
-//  https://ph-files.imgix.net/55f4cce3-a55a-4de7-8dff-d943819fcd56.png?auto=format&auto=compress&codec=mozjpeg&cs=strip
-//   {
-//     ProduktID: 1,
-//     Produktcode: 'abc123',
-//     Produkttitel: 'PHP-Kochbuch',
-//     Autorname: 'King of PHP',
-//     Verlagsname: 'PHPBu00fcchersindblu00f6d GmbH',
-//     PreisNetto: '70.00',
-//     Mwstsatz: 0.07,
-//     PreisBrutto: '74.90',
-//     Lagerbestand: 500,
-//     Kurzinhalt: 'Dieses Buch ist fu00fcr Buchstaben da.',
-//     Gewicht: 500,
-//     LinkGrafik:
-//       'https://nord-sued.com/wp-content/uploads/2021/09/U1_978-3-314-10582-1_3D_sRGB-997x1024.png',
-//   },
-//   {
-//     ProduktID: 2,
-//     Produktcode: '1234abc',
-//     Produkttitel: 'Java-Kochbuch',
-//     Autorname: 'Dr. Java',
-//     Verlagsname: 'JBooks',
-//     PreisNetto: '30.00',
-//     Mwstsatz: 0.07,
-//     PreisBrutto: '32.10',
-//     Lagerbestand: 6,
-//     Kurzinhalt: 'In diesem Buch lernen Sie wie man in MineCraft kocht.',
-//     Gewicht: 300,
-//     LinkGrafik:
-//       'https://articles-images.sftcdn.net/wp-content/uploads/sites/8/2013/01/Minecraft_Zauberbuch.png',
-//   },
-//   {
-//     ProduktID: 3,
-//     Produktcode: '1234abcd',
-//     Produkttitel: 'JavaScript-Frameworks',
-//     Autorname: 'Mr. JayScript',
-//     Verlagsname: 'JScripts',
-//     PreisNetto: '60.00',
-//     Mwstsatz: 0.07,
-//     PreisBrutto: '64.20',
-//     Lagerbestand: 1000,
-//     Kurzinhalt: 'Dieses Buch erklu00e4rt Ihnen verschiedene JS-Frameworks',
-//     Gewicht: 800,
-//     LinkGrafik: 'https://shop.ksta.de/de/autothumb/1000x1000/Wandertag_Cover_Quadrat.jpg',
-//   },
-// ]
 
 // shopStore.setProducts(products)
 

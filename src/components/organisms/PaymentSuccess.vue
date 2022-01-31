@@ -35,11 +35,13 @@
         group
         hover:bg-neutral-700
       "
-      @click="$router.push('./')"
+      @click="router.push({ name: 'home' })"
     >
       Zurück zur Startseite
     </button>
   </div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import router from '@/routes/index'
+</script>
